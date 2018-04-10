@@ -28,15 +28,17 @@ RUN rm azcopy.tar.gz install.sh
 
 # Only needed if you are Building the Docker Image from a Windows Machine
 # This library converts the dos line endings to unix line endings inside a file.
-#RUN apt-get install -y dos2unix
+RUN apt-get install -y dos2unix
 
 # Copy the local shell script down to the machine.
-#COPY ./run.sh ./home/src/run.sh
+COPY ./scripts/* ./home/scripts/
 
 # Only needed if you are Building the Docker Image from a Windos Machine
 # Use the dos2unix library to convert the line endings.
-#RUN dos2unix /home/src/run.sh
+RUN find ./home/scripts -type f -print0 | xargs -0 dos2unix
 
 # Only needed if you are Building the Docker Image from a Windows Machine
 # Removing the dos2unix library now that the line ending conversion has been completed.
-#RUN apt-get --purge remove -y dos2unix
+RUN apt-get --purge remove -y dos2unix
+
+COPY /sample-files/* /home/sample-files/
