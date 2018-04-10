@@ -6,5 +6,5 @@ azcopy \
     --verbose \
     --quiet
 
-# To Clean Up
+# To Clean Up executing the following command:
 # rm -rf /home/downloads

@@ -4,3 +4,5 @@ azcopy \
     --dest-key $STORAGE_KEY \
     --verbose \
     --quiet
+
+    

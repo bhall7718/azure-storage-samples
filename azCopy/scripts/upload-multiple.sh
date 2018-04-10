@@ -5,3 +5,5 @@ azcopy \
     --recursive \
     --verbose \
     --quiet
+
+    
